@@ -2,6 +2,11 @@ import logo from './logo.svg';
 import './App.css';
 
 function App() {
+
+
+
+
+
   return (
     <div className="App">
       <header className="App-header">
@@ -15,9 +20,22 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React
+          Learn React HE
         </a>
       </header>
+      <h1>Display your Spotify profile data</h1>
+
+      <section id="profile">
+      <h2>Logged in as <span id="displayName"></span></h2>
+      <span id="avatar"></span>
+      <ul>
+          <li>User ID: <span id="id"></span></li>
+          <li>Email: <span id="email"></span></li>
+          <li>Spotify URI: <a id="uri" href="#"></a></li>
+          <li>Link: <a id="url" href="#"></a></li>
+          <li>Profile Image: <span id="imgUrl"></span></li>
+      </ul>
+      </section>
     </div>
   );
 }
