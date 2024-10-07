@@ -1,28 +1,52 @@
 import logo from './logo.svg';
 import './App.css';
 
+import { useState } from 'react';
+
+import SearchBar from './states/SearchBar';
+import Playlist from './states/Playlist';
+import Tracklist from './states/Tracklist';
+
+import MockData from './MockData';
+
 function App() {
 
+  const [foundSongs, setFoundSongs] = useState(MockData);
+  const [playListName, setplayListName] = useState("");
+  const [playListTracks, setplayListTracks] = useState([]);
 
+  const onChangePlayListName = (event) => {
+    setplayListName(event.target.value);
+  };
 
+  const onChangeAddSong = (index) => {
+    const songToMove = foundSongs[index];
+    setplayListTracks((playSongs) => [...playSongs,songToMove]); 
+    setFoundSongs((prevSongs) => prevSongs.filter((_, i) => i !==index ));
+  };
 
+  const onChangeRemoveSong = (index) => {
+    const songToMove = playListTracks[index];
+    setFoundSongs((playSongs) => [...playSongs,songToMove]); 
+    setplayListTracks((prevSongs) => prevSongs.filter((_, i) => i !==index ));
+  };
 
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React HE
-        </a>
-      </header>
+
+      <SearchBar />
+      <button>SEARCH BUTTON</button>
+      <Tracklist displaySongs={foundSongs} addSong={onChangeAddSong}/>
+      <Playlist playName={playListName} onChangePlay={onChangePlayListName} displaySongs={playListTracks} removeSong={onChangeRemoveSong} />
+      <button>SAVE BUTTON</button>
+
+
+
+
+
+
+
+
       <h1>Display your Spotify profile data</h1>
 
       <section id="profile">

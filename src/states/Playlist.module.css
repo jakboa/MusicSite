@@ -1,0 +1,26 @@
+
+
+
+.playList {
+    display: block;
+    width: fit-content;
+    padding: 5px;
+    border: 10px solid blue;
+    margin: 10px auto;
+}
+
+.playList h4 {
+    display: block;
+    text-transform: capitalize;
+}
+
+.playList h3 {
+    color: purple;
+    background-color: aqua;
+    text-transform: uppercase;
+    width: fit-content;
+    padding: 5px 15px;
+    margin: 5px auto;
+}
+
+

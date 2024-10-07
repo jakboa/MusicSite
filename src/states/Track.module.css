@@ -1,0 +1,12 @@
+p {
+    display: inline;
+    margin-right: 9px;
+}
+
+.songInfo {
+    display: inline-block;
+    width: fit-content;
+    border: 4px solid black;
+    padding: 5px;
+    margin: 10px auto;
+}
