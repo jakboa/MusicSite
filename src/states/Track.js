@@ -3,13 +3,13 @@ import style from './Track.module.css'
 
 
 function Track( {songInfo} ){
-    
+
     return(
         <div className={style.songInfo}>
-            {songInfo.map((info, index) => (
-                <p key={index}>{info}</p>
-            )
-        )}
+            
+            <p>{songInfo.name}</p>
+            <p>{songInfo.artist} {songInfo.album}</p>
+            
         </div>
     );
 }
