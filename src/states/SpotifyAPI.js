@@ -1,8 +1,10 @@
 
-import React, { useEffect, useState } from 'react';
 
 
 /*
+
+import React, { useEffect, useState } from 'react';
+
 let sensitiveInformation;
 let redirectUri;
 let clientId;
@@ -63,8 +65,8 @@ async function getSpotifyAccess() {
             accessTokenSong = jsonResponse.access_token;
 
 
-            const expires = jsonResponse.expires_in;
-            const tokenType = jsonResponse.token_type;
+            //const expires = jsonResponse.expires_in;
+            //const tokenType = jsonResponse.token_type;
             //console.log("This is the access: "+accessTokenSong +"This is how many seconds i have:" +expires +"This is the token type" + tokenType);
 
         };

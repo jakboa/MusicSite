@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 
 import { useState } from 'react';
@@ -23,7 +22,6 @@ function App() {
   const [playListName, setPlayListName] = useState("");
   
   const [playListTracks, setplayListTracks] = useState([]);
-  const [savedPlaylistTracks, setsavedPlaylistTracks] = useState([]);
 
 
   
