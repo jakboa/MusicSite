@@ -1,9 +1,39 @@
 
-import sensitiveInformation from "./SpotifyKeys";
+import React, { useEffect, useState } from 'react';
 
+
+/*
+let sensitiveInformation;
+let redirectUri;
+let clientId;
+let clientSecret;
+
+async function replaceWithMock() {
+    try {
+        sensitiveInformation = await import("./SpotifyKeys"); // dynamic import
+        
+        redirectUri = sensitiveInformation.redirectUri;
+        clientId = sensitiveInformation.clientId;
+        clientSecret = sensitiveInformation.clientSecret;
+      
+    } catch (error) {
+      console.error('Failed to load the module:', error);
+    }
+  }
+  
+  loadModule();
+  */
+/*
+import sensitiveInformation from "./SpotifyKeys";
 const redirectUri = sensitiveInformation.redirectUri;
 const clientId = sensitiveInformation.clientId;
 const clientSecret = sensitiveInformation.clientSecret;
+*/
+
+const redirectUri = "...";
+const clientId = "...";
+const clientSecret = "...";
+
 
 
 const baseTokenUrl = 'https://accounts.spotify.com/api/token';
@@ -93,7 +123,8 @@ const SearchSong = async(query) => {
 
 
 
-
+// THIS CODE WHERE I GET THE ACCESS TOKEN IS TAKEN FROM THE TUTORIAL HERE:
+// https://developer.spotify.com/documentation/web-api/howtos/web-app-profile
 
 const params = new URLSearchParams(window.location.search);
 const code = params.get("code");
@@ -178,13 +209,15 @@ async function getUser() {
             country:jsonResponse.country,
             uri:jsonResponse.uri
         };
-        //console.log(personInfo);
         return personInfo;
 
         };
 
     } catch(error) {console.log(error)}
 };
+
+
+
 
 
 // CREATE PLAYLIST - THEN ADD SONGS
